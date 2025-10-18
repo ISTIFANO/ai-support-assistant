@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface FAQRepository extends JpaRepository<FAQ, Long> {
-    List<FAQ> findByCategorie(String categorie);
+    List<FAQ> findByCategory(String categorie);
 }
