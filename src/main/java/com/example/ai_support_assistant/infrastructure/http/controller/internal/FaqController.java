@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/faq")
@@ -58,14 +59,11 @@ public class FaqController {
         return ResponseEntity.ok(faqs);
     }
 
-    @Operation(summary = "Delete a FAQ by ID")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "FAQ deleted successfully"),
-            @ApiResponse(responseCode = "404", description = "FAQ not found")
-    })
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteFAQ(@PathVariable Long id) {
+    public Map<String, String> deleteFAQ(@PathVariable Long id) {
         faqService.deleteFAQ(id);
-        return ResponseEntity.noContent().build();
+        return Map.of("status", "deleted");
     }
+
+
 }

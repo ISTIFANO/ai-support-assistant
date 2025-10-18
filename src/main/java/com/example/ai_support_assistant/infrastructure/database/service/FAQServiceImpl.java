@@ -31,7 +31,7 @@ public class FAQServiceImpl implements IFAQService {
     @Override
     public List<FAQ> getFAQsByCategorie(String categorie) {
         log.info("Fetching FAQs by categorie: {}", categorie);
-        return faqRepository.findByCategorie(categorie);
+        return faqRepository.findByCategory(categorie);
     }
 
     @Override
