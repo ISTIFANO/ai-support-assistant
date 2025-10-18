@@ -17,5 +17,5 @@ public class FAQ extends BaseEntity {
     private String question;
     @Column(columnDefinition = "TEXT")
     private String answer;
-    private String companyId;
+    private String userId;
 }
