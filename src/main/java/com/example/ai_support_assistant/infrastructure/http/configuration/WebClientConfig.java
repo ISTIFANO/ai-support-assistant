@@ -12,7 +12,6 @@ import org.springframework.http.MediaType;
 public class WebClientConfig {
 
     Dotenv dotenv = Dotenv.load();
-
     private final String apiKey = dotenv.get("API_KEY");
 
     @Value("${gemini.model:gemini-2.5-pro}")
