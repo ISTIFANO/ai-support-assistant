@@ -1,5 +1,6 @@
 package com.example.ai_support_assistant.infrastructure.http.configuration;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +11,8 @@ import org.springframework.http.MediaType;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${gemini.api.key}")
-    private String apiKey;
+    Dotenv dotenv = Dotenv.load();
+    private final String apiKey = dotenv.get("API_KEY");
 
     @Value("${gemini.model:gemini-2.5-pro}")
     private String model;
