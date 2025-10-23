@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "airesponse")
 public class AIResponse extends BaseEntity {
     @ManyToOne
     private Conversation conversation;
